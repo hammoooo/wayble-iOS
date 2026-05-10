@@ -151,22 +151,6 @@ Swift 6.0
 
 <br>
 
-## 프로젝트 개요
-
-Wayble은 장애인·교통약자를 위한 맞춤형 배리어프리 지도 서비스입니다.  
-그 중 **Wayble Zone**은 경사로·엘리베이터·장애인 화장실 등 **접근성 정보가 확인된 가게**를 지도 위에서 탐색하고, 실제 방문자가 남긴 리뷰와 사진을 공유하는 기능입니다.
-
-| 항목      | 내용                             |
-| --------- | -------------------------------- |
-| 플랫폼    | iOS                              |
-| 개발 환경 | Swift 6.0 · SwiftUI · Xcode 16.2 |
-| 아키텍처  | MVVM + `@Observable`             |
-| 네트워크  | Moya / Alamofire                 |
-| 지도      | Naver Maps SDK                   |
-| 기간      | 2025.07 – 2025.08                |
-
-<br>
-
 ## 내가 구현한 기능
 
 ### 1. 장소 검색 (`Search/`)
@@ -218,7 +202,7 @@ centerUpdateTask = Task { @MainActor in
 **접근성 시설 정보 + 리뷰 목록 + 정렬 기능**
 
 - `PlaceDetailView`: `zoneID` 바인딩이 바뀔 때 `.task(id:)`로 자동 재요청
-- `PlaceInfoView`: 경사로·엘리베이터·장애인 화장실 등 시설 정보 뱃지 표시
+- `PlaceInfoView`: 경사로, 엘리베이터, 장애인 화장실 등 시설 정보 뱃지 표시
 - `PlaceReView`: 추천순 / 최신순 정렬 전환 시 즉시 리뷰 목록 재로드
 - 별점(`★`) 평균 표시 및 각 리뷰 카드에 시설 태그 렌더링
 
@@ -273,7 +257,3 @@ await writeVM.submit(zoneID: place.id, form: form, photoItems: items.isEmpty ? n
 </div>
 
 <br>
-
-## 팀 프로젝트 전체 README
-
-팀 전체 기여·설계·컨벤션은 [wayble-iOS 레포지토리 README](./wayble-iOS/README.md)를 참고해주세요.
